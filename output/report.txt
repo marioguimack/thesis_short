@@ -5,66 +5,66 @@ Universe
 lines in static lists                  1138
 Copenhagen (CSE) lines                  683
 #ERROR in RI or MV                      175
-share-class lines merged into firms      59
-final universe (firms)                  407
+share-class lines merged into firms      71
+final universe (firms)                  441
   of which active                       133
-  of which dead                         274
+  of which dead                         308
 
 Feasibility
-  firms per month: mean 163, min 137 (Jul 2017), max 191
+  firms per month: mean 164, min 130 (Jun 2026), max 204
   months below 80 firms: 0
-  excluding 8 stale stocks (> 30% zero months): mean 161, min 135
-  zero-return share of observations: 4.9%
-  extreme returns (>300% or <-90%): 21
-  coverage of valid obs: DK_UP 100.0%, DK_VO 98.5%, DK_NOSH 100.0%, DK_NOSHFF 93.4%, DKK_PA 89.0%, DKK_PB 89.0%
-  median bid-ask spread: 1.5% (max year 2008)
-  series to re-download: 55 (see missing_series_to_redownload.csv)
+  excluding 7 stale stocks (> 30% zero months): mean 163, min 130
+  zero-return share of observations: 4.6%
+  extreme returns (>300% or <-90%): 19
+  coverage of valid obs: DK_UP 100.0%, DK_VO 99.2%, DK_NOSH 100.0%, DK_NOSHFF 93.3%, DKK_PA 89.5%, DKK_PB 89.6%
+  median bid-ask spread: 1.4% (max year 2010)
+  series to re-download: 22 (see missing_series_to_redownload.csv)
 
 Concentration
-  Novo weight: 10.9% (start) -> peak 56.5% (Aug 2024) -> 23.6% (end)
-  top-5 share: 63.4% -> peak 69.8% -> 50.3%
-  effective number of stocks: 8.3 -> low 3.0 (Aug 2024) -> 11.8
+  Novo weight: 10.8% (start) -> peak 57.2% (Aug 2024) -> 25.8% (end)
+  top-5 share: 62.8% -> peak 70.7% -> 55.0%
+  effective number of stocks: 8.5 -> low 3.0 (Aug 2024) -> 10.1
   months where Novo is the largest stock: 215 of 273
 
 Market returns (full sample)
                  ann_return  ann_vol  return_per_vol  max_drawdown  corr_with_Novo
-VW                    0.108    0.168           0.641        -0.572           0.650
-EW                    0.110    0.165           0.667        -0.657           0.245
-VW_ex_Novo            0.093    0.171           0.547        -0.631           0.291
-VW_capped_10pct       0.115    0.160           0.718        -0.587           0.437
+VW                    0.108    0.168           0.643        -0.573           0.648
+EW                    0.107    0.167           0.641        -0.653           0.239
+VW_ex_Novo            0.094    0.170           0.554        -0.632           0.270
+VW_capped_10pct       0.116    0.159           0.730        -0.589           0.417
 Novo                  0.166    0.257           0.647        -0.756           1.000
 
 Annualised return by period
                  2004-2016  2017-Jun 2024 (boom)  Jul 2024-2026 (fall)
-VW                   0.120                 0.181                -0.151
-EW                   0.101                 0.142                 0.061
-VW_ex_Novo           0.097                 0.099                 0.053
-VW_capped_10pct      0.129                 0.126                 0.006
+VW                   0.119                 0.182                -0.151
+EW                   0.095                 0.144                 0.057
+VW_ex_Novo           0.097                 0.099                 0.065
+VW_capped_10pct      0.129                 0.126                 0.019
 Novo                 0.215                 0.343                -0.409
 
 Novo's contribution to the VW return (sum of monthly contributions)
       VW_return_sum  Novo_contribution  Novo_share_of_VW
 date                                                    
-2004          0.208              0.027             0.131
-2005          0.330              0.019             0.058
-2006          0.227              0.026             0.114
-2007          0.164              0.051             0.310
-2008         -0.606             -0.016             0.026
-2009          0.291              0.031             0.108
-2010          0.279              0.121             0.435
+2004          0.211              0.027             0.129
+2005          0.328              0.019             0.057
+2006          0.228              0.026             0.113
+2007          0.162              0.051             0.312
+2008         -0.609             -0.016             0.026
+2009          0.289              0.031             0.109
+2010          0.275              0.121             0.440
 2011         -0.151              0.022            -0.149
-2012          0.277              0.140             0.507
-2013          0.252              0.030             0.119
-2014          0.217              0.104             0.480
-2015          0.310              0.128             0.413
-2016         -0.139             -0.126             0.906
-2017          0.236              0.079             0.336
-2018         -0.021             -0.010             0.463
-2019          0.191              0.063             0.330
-2020          0.269              0.034             0.128
-2021          0.250              0.132             0.527
-2022          0.007              0.087            12.790
-2023          0.174              0.200             1.149
-2024          0.129              0.069             0.532
-2025         -0.283             -0.319             1.126
-2026          0.048             -0.028            -0.575
+2012          0.277              0.141             0.509
+2013          0.253              0.030             0.119
+2014          0.218              0.106             0.484
+2015          0.313              0.130             0.414
+2016         -0.139             -0.127             0.908
+2017          0.237              0.080             0.338
+2018         -0.021             -0.010             0.474
+2019          0.193              0.064             0.332
+2020          0.271              0.035             0.128
+2021          0.249              0.134             0.539
+2022          0.009              0.089            10.251
+2023          0.176              0.203             1.155
+2024          0.129              0.070             0.540
+2025         -0.281             -0.329             1.174
+2026          0.044             -0.032            -0.730

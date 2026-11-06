@@ -39,13 +39,26 @@ def load_static() -> pd.DataFrame:
 
 
 def load_series(fname: str) -> tuple[pd.DataFrame, pd.Series]:
-    """Datastream export: row 0 = names, row 1 = codes, rows 2+ = monthly values.
-    Columns are in the same order as DK_active followed by DK_dead."""
+    """Datastream export: row 0 = names, row 1 = codes like 'DK:NON(RI)', rows 2+ = monthly values.
+    The download order is NOT the order of the static lists, so columns are matched to the
+    static rows (DK_active followed by DK_dead) by Datastream code. Columns that returned
+    #ERROR have no code; the static rows without a matching column get all-NaN data and a
+    NaN code, which marks them as errors downstream."""
     raw = pd.read_csv(DATA / fname, header=None, low_memory=False)
-    codes = raw.iloc[1, 1:].reset_index(drop=True)
+    hdr = raw.iloc[1, 1:].str.replace(r"\(.*\)$", "", regex=True).reset_index(drop=True)
     df = raw.iloc[2:, 1:].apply(pd.to_numeric, errors="coerce")
     df.index = pd.to_datetime(raw.iloc[2:, 0]).rename("date")
     df.columns = range(df.shape[1])
+    keep = hdr.notna()
+    if hdr[keep].duplicated().any():
+        raise ValueError(f"{fname}: duplicated codes in the header")
+    df = df.loc[:, keep]
+    df.columns = hdr[keep].values
+    static_codes = load_static()["type"].astype(str)
+    found = static_codes.isin(df.columns)
+    df = df.reindex(columns=static_codes.values)
+    df.columns = range(df.shape[1])
+    codes = static_codes.where(found)
     return df, codes
 
 
